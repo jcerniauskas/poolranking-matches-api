@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 using poolranking_matches_api.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -13,8 +12,6 @@ namespace poolranking_matches_api.Data
 {
     public class DataClient
     {
-
-
         private DocumentClient client;
 
         public DataClient()
@@ -29,22 +26,18 @@ namespace poolranking_matches_api.Data
             {
                 try
                 {
-
                     var foundMatch = await this.client.ReadDocumentAsync(
                          UriFactory.CreateDocumentUri(Constants.databaseName, Constants.collectionName, match.Id));
                     return JsonConvert.DeserializeObject<Match>(foundMatch.Resource.ToString());
-
                 }
                 catch (DocumentClientException de)
                 {
                     if (de.StatusCode == HttpStatusCode.NotFound)
                     {
-
                         var createdMatchWithId = await this.client.CreateDocumentAsync(
                               UriFactory.CreateDocumentCollectionUri(Constants.databaseName, Constants.collectionName), match);
 
                         return JsonConvert.DeserializeObject<Match>(createdMatchWithId.Resource.ToString());
-
                     }
                     else
                     {
@@ -67,8 +60,6 @@ namespace poolranking_matches_api.Data
 
             return await this.client.ReadDocumentAsync<Match>(
                     UriFactory.CreateDocumentUri(Constants.databaseName, Constants.collectionName, id));
-
-
         }
 
         public async Task<List<Match>> GetMatches()
@@ -87,9 +78,6 @@ namespace poolranking_matches_api.Data
             }
 
             return results;
-            //return this.client.CreateDocumentQuery<Match>(
-            //     UriFactory.CreateDocumentCollectionUri(Constants.databaseName, Constants.collectionName), queryOptions).ToList();
-
         }
     }
 }

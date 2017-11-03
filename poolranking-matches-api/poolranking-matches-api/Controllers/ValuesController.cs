@@ -11,12 +11,12 @@ namespace poolranking_matches_api.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-
         private readonly DataClient dataClient;
 
         public ValuesController() {
             dataClient = new DataClient(); 
         }
+
         // GET api/values
         [HttpGet]
         public async Task<IEnumerable<Match>> Get()
@@ -37,7 +37,5 @@ namespace poolranking_matches_api.Controllers
         {
             return await dataClient.CreateMatchIfNotExists(match);
         }
-
-       
     }
 }

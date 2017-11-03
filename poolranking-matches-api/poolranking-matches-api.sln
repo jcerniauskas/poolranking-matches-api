@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poolranking-matches-api", "poolranking-matches-api\poolranking-matches-api.csproj", "{2728C466-9CA7-43C1-BC4E-ADA3968AB981}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1561C138-B669-41A5-9FA7-AEA1F1B539D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2728C466-9CA7-43C1-BC4E-ADA3968AB981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2728C466-9CA7-43C1-BC4E-ADA3968AB981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2728C466-9CA7-43C1-BC4E-ADA3968AB981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2728C466-9CA7-43C1-BC4E-ADA3968AB981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1561C138-B669-41A5-9FA7-AEA1F1B539D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1561C138-B669-41A5-9FA7-AEA1F1B539D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1561C138-B669-41A5-9FA7-AEA1F1B539D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1561C138-B669-41A5-9FA7-AEA1F1B539D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9AFF989-325C-457D-BDD6-BAD6B9F2D765}
+	EndGlobalSection
+EndGlobal

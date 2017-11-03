@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  poolranking-matches-api:
+    image: poolranking-matches-api
+    build:
+      context: ./poolranking-matches-api
+      dockerfile: Dockerfile

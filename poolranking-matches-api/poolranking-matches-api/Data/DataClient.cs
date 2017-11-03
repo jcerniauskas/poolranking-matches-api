@@ -17,7 +17,6 @@ namespace poolranking_matches_api.Data
         public DataClient()
         {
             this.client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
-
         }
 
         public async Task<Match> CreateMatchIfNotExists(Match match)

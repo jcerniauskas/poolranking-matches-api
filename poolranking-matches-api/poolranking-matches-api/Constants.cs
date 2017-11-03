@@ -1,10 +1,19 @@
-﻿namespace poolranking_matches_api
+﻿using System;
+
+namespace poolranking_matches_api
 {
     public static class Constants
     {
-        public const string EndpointUri = "https://exoticwordsdb.documents.azure.com:443/";
-        public const string PrimaryKey = "yVUQ5xANU2UyoHrxwvdIJQABR43W4vcAmafBzS4JGkaWXduZIxIa9vgzwnFsrUVftBmwxJPR4NxOvJKXUihYhA==";
+        public static string EndpointUri
+        {
+            get { return Environment.GetEnvironmentVariable("COSMOSDB_ENDPOINT"); }
+        }
+        public static string PrimaryKey
+        {
+            get { return Environment.GetEnvironmentVariable("COSMOSDB_KEY"); }
+        }
         public const string databaseName = "Rankings";
         public const string collectionName = "Match";
     }
+
 }

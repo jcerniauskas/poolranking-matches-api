@@ -10,9 +10,7 @@ namespace poolranking_matches_api
 {
     public class Startup
     {
-        
         private DocumentClient client;
-
 
         public Startup(IConfiguration configuration)
         {

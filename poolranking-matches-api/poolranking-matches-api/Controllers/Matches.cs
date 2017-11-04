@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using poolranking_matches_api.Data;
 using poolranking_matches_api.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace poolranking_matches_api.Controllers
 {

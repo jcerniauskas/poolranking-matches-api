@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using poolranking_matches_api.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -59,6 +60,24 @@ namespace poolranking_matches_api.Data
 
             return await this.client.ReadDocumentAsync<Match>(
                     UriFactory.CreateDocumentUri(Constants.databaseName, Constants.collectionName, id));
+        }
+
+        public async Task<List<Match>> GetMatchesByPlayerId(string id)
+        {
+            FeedOptions queryOptions = new FeedOptions { MaxItemCount = -1 };
+
+            IDocumentQuery<Match> query = client.CreateDocumentQuery<Match>(
+                UriFactory.CreateDocumentCollectionUri(Constants.databaseName, Constants.collectionName),
+                new FeedOptions { MaxItemCount = -1 })
+                .Where(a => a.WinnerId == id || a.LoserId == id)
+                .AsDocumentQuery();
+            List<Match> results = new List<Match>();
+            while (query.HasMoreResults)
+            {
+                results.AddRange(await query.ExecuteNextAsync<Match>());
+            }
+
+            return results;
         }
 
         public async Task<List<Match>> GetMatches()

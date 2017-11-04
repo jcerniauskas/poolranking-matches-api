@@ -15,21 +15,28 @@ namespace poolranking_matches_api.Controllers
             dataClient = new DataClient(); 
         }
 
-        // GET api/values
+        // GET api/matches
         [HttpGet]
         public async Task<IEnumerable<Match>> Get()
         {
             return await dataClient.GetMatches();
         }
 
-        // GET api/values/5
+        // GET api/matches/5
         [HttpGet("{id}")]
         public async Task<Match> Get(string id)
         {
             return await dataClient.GetMatch(id);
         }
 
-        // POST api/values
+        // GET api/matches/allplayermatches/5
+        [HttpGet("allplayermatches/{id}")]
+        public async Task<IEnumerable<Match>> Get(string id, string fakeStr)
+        {
+            return await dataClient.GetMatchesByPlayerId(id);
+        }
+
+        // POST api/matches
         [HttpPost]
         public async Task<Match> Post([FromBody]Match match)
         {

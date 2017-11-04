@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace poolranking_matches_api.Controllers
 {
     [Route("api/[controller]")]
-    public class Matches : Controller
+    public class MatchesController : Controller
     {
         private readonly DataClient dataClient;
 
-        public Matches() {
-            dataClient = new DataClient(); 
+        public MatchesController(DataClient dataClient)
+        {
+            this.dataClient = dataClient;
         }
 
         // GET api/matches

@@ -9,11 +9,11 @@ using poolranking_matches_api.Models;
 namespace poolranking_matches_api.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class Matches : Controller
     {
         private readonly DataClient dataClient;
 
-        public ValuesController() {
+        public Matches() {
             dataClient = new DataClient(); 
         }
 
